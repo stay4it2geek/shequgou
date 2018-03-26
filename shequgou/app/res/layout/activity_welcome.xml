@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="@android:style/Widget.ProgressBar.Small"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="bottom|center"
+        android:layout_marginBottom="40dp" />
+
+    <LinearLayout
+        android:visibility="invisible"
+        android:id="@+id/secret_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/backimg"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+      >
+
+        <com.act.quzhibo.lock_view.LockIndicatorView
+            android:id="@+id/indicator"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="80dp" />
+
+        <com.act.quzhibo.lock_view.LockViewGroup
+            android:id="@+id/lockgroup"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp" />
+
+        <TextView
+            android:id="@+id/tv_tips"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="绘制解锁图案"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+</FrameLayout>

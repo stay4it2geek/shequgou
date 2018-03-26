@@ -1,0 +1,57 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#eeeeee">
+
+
+    <com.jcodecraeer.xrecyclerview.XRecyclerView
+        android:id="@+id/recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <com.getbase.floatingactionbutton.FloatingActionsMenu
+        android:id="@+id/showMenuButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        android:layout_margin="5dp"
+        app:fab_addButtonColorNormal="#fe4060"
+        app:fab_addButtonColorPressed="#ff6060"
+        app:fab_addButtonPlusIconColor="@color/white"
+        app:fab_addButtonSize="mini"
+        app:fab_expandDirection="up"
+        app:fab_labelStyle="@style/menu_labels_style"
+        app:layout_anchorGravity="bottom">
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/sort"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="4dp"
+            app:fab_colorNormal="#fe4060"
+            app:fab_colorPressed="#ff6060"
+            app:fab_icon="@android:drawable/ic_menu_sort_by_size"
+            app:fab_size="mini"
+            app:fab_title="排序" />
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/openShow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="4dp"
+            app:fab_colorNormal="#fe4060"
+            app:fab_colorPressed="#ff6060"
+            app:fab_icon="@drawable/focus_shower"
+            app:fab_size="mini"
+            app:fab_title="直播" />
+
+
+    </com.getbase.floatingactionbutton.FloatingActionsMenu>
+
+    <com.act.quzhibo.widget.LoadNetView
+        android:id="@+id/loadview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</FrameLayout>

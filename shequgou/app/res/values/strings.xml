@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">情趣社区购</string>
+
+    <string name="main_tab_recent">会话</string>
+    <string name="main_tab_contact">好友</string>
+    <string name="add_avator">头像</string>
+    <string name="add_nick">昵称</string>
+    <string name="add_name">账号</string>
+    <string name="agree">接受</string>
+    <string name="new_friend">新朋友</string>
+
+    <string name="add_friend">添加好友</string>
+
+    <string name="set_notify">接收新消息通知</string>
+    <string name="set_myinfo">个人资料</string>
+    <string name="set_blacklist">黑名单</string>
+    <string name="set_voice">声音</string>
+    <string name="set_vibrate">震动</string>
+    <string name="logout">退出登陆</string>
+
+    <string name="longclick_speak">长按说话</string>
+    <string name="picture">照片</string>
+    <string name="camera">拍摄</string>
+    <string name="location">位置</string>
+    <string name="voice_up_tips">手指上滑,取消发送</string>
+    <string name="voice_cancel_tips">松开手指，取消发送</string>
+    <string name="voice_seconds_tips">还可以说%1$s秒</string>
+    <string name="voice_short_tips">录音时间太短</string>
+
+    <string name="cancelFocus">取消关注</string>
+    <string name="focusOk">关注成功</string>
+    <string name="focusFail">关注失败</string>
+    <string name="isCancelFocus">是否取消关注</string>
+    <string name="reallyCancelFocus">真的要取消关注人家吗</string>
+    <string name="keepFocus">继续关注</string>
+    <string name="cancelFocusOk">取消关注成功</string>
+    <string name="focusTa">关注ta</string>
+    <string name="ifChecked">是否删除该订单？</string>
+    <string name="deleteCanNotRecover">删除后不可恢复哦</string>
+    <string name="cancel">取消</string>
+</resources>
+

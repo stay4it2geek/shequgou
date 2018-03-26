@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/commonLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="2dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="2dp"
+        android:background="@drawable/background_card"
+        android:padding="2dp">
+
+        <FrameLayout
+            android:id="@+id/photoImglayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/deletetop"
+                android:visibility="gone"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="right|top"
+                android:layout_marginBottom="7dp"
+                android:layout_marginRight="7dp"
+                android:background="@drawable/btn_delete" />
+            <ImageView
+                android:id="@+id/photoImg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </FrameLayout>
+
+        <RelativeLayout
+            android:id="@+id/explianlayout"
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:layout_alignLeft="@+id/photoImglayout"
+            android:layout_alignRight="@+id/photoImglayout"
+            android:layout_below="@+id/photoImglayout"
+            android:layout_marginTop="3dp">
+
+            <TextView
+                android:id="@+id/nickName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:padding="2dp"
+                android:text=""
+                android:textColor="#000"
+                android:textSize="11sp" />
+
+            <TextView
+                android:id="@+id/onlineCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:padding="2dp"
+                android:text=""
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@+id/isRelax"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:padding="2dp"
+                android:text=""
+                android:textSize="10sp"
+                android:visibility="gone" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/delete"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:visibility="gone"
+        android:layout_gravity="right|bottom"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/btn_delete" />
+</FrameLayout>

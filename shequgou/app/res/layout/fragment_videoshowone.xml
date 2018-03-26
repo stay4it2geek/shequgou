@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/videoFrameLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <com.devlin_n.videoplayer.player.IjkVideoView
+        android:id="@+id/videoview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="-32dp"
+        android:layout_marginLeft="-38dp"
+        android:layout_marginRight="-38dp"
+        android:layout_marginTop="-32dp" />
+
+    <ImageView
+        android:id="@+id/iv_cover"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="-32dp"
+        android:layout_marginLeft="-38dp"
+        android:layout_marginRight="-38dp"
+        android:layout_marginTop="-32dp" />
+
+    <com.act.quzhibo.widget.CircleImageView
+        android:id="@+id/iv_avatar"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_gravity="right|bottom"
+        android:layout_marginBottom="190dp"
+        android:layout_marginRight="10dp"
+        android:background="@mipmap/default_head"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/dashang"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_gravity="right|bottom"
+        android:layout_marginBottom="135dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/dashang" />
+
+    <RadioButton
+        android:id="@+id/dianliangRadio"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_gravity="right|bottom"
+        android:layout_marginBottom="80dp"
+        android:layout_marginRight="9dp"
+        android:background="@drawable/btndianliang_selector"
+        android:button="@null" />
+
+    <ProgressBar
+        android:id="@+id/bar"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_gravity="center" />
+</FrameLayout>

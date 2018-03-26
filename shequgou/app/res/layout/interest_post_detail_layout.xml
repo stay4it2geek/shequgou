@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:emojicon="http://schemas.android.com/apk/res-auto"
+    android:background="#fff"
+    android:id="@+id/root_view"
+    android:orientation="vertical">
+    <com.act.quzhibo.widget.TitleBarView
+        android:visibility="gone"
+        android:id="@+id/titlebar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+   <FrameLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+       <com.jcodecraeer.xrecyclerview.XRecyclerView
+           android:id="@+id/postRecyleview"
+           android:layout_width="match_parent"
+           android:layout_marginBottom="50dp"
+           android:layout_height="match_parent" />
+
+       <LinearLayout
+           android:id="@+id/commentLayout"
+           android:layout_width="match_parent"
+           android:layout_height="50dp"
+           android:layout_gravity="bottom"
+           android:background="#eee"
+           android:orientation="horizontal">
+
+           <com.rockerhieu.emojicon.EmojiconEditText
+               android:id="@+id/comment_et"
+               emojicon:emojiconSize="28sp"
+               android:layout_marginTop="5dp"
+               android:textSize="@dimen/text_size_medium"
+               android:layout_marginLeft="6dp"
+               android:textColor="@color/color_1e1e1e"
+               android:hint="点击这里评论"
+               android:textColorHint="@color/color_b4"
+               android:layout_width="0dp"
+               android:layout_height="wrap_content"
+               android:layout_weight="2.4"
+               android:gravity="left|center"
+               android:lineSpacingExtra="@dimen/margin_3"
+               android:background="@drawable/drawable_edit_normal"
+               android:imeOptions="flagNoExtractUi"
+               android:minHeight="@dimen/height_40"
+               android:padding="@dimen/margin_5"/>
+
+           <TextView
+               android:id="@+id/commentBtn"
+               android:layout_width="0dp"
+               android:layout_height="match_parent"
+               android:layout_margin="5dp"
+               android:layout_weight="1"
+               android:background="@drawable/button_common_selector"
+               android:gravity="center"
+               android:text="评论"
+               android:textColor="@color/white"
+               android:textSize="16sp" />
+       </LinearLayout>
+
+       <com.act.quzhibo.widget.LoadNetView
+           android:id="@+id/loadview"
+           android:visibility="gone"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           />
+   </FrameLayout>
+
+</LinearLayout>

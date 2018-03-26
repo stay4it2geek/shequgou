@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="5dp"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    android:layout_marginTop="5dp"
+    android:background="@drawable/background_card">
+
+    <RelativeLayout
+        android:id="@+id/commonLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <FrameLayout
+            android:id="@+id/photoImglayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/photoImg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </FrameLayout>
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/photoImglayout"
+            android:layout_alignRight="@+id/photoImglayout"
+            android:layout_below="@+id/photoImglayout"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp">
+
+            <TextView
+                android:id="@+id/nickName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:paddingLeft="5dp"
+                android:text="TextView"
+                android:textColor="#000"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/introduce"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/nickName"
+                android:paddingLeft="5dp"
+                android:visibility="gone"
+                android:paddingTop="5dp"
+                android:textColor="#EA99"
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@+id/location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:gravity="bottom"
+                android:layout_below="@+id/introduce"
+                android:paddingLeft="5dp"
+                android:paddingTop="5dp"
+                android:textColor="#EA99"
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@+id/sexAngAge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="45dp"
+                android:paddingLeft="5dp"
+                android:visibility="gone"
+                android:textColor="@color/white"
+                android:background="@drawable/button_common_selector"
+                android:textSize="10sp" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/delete"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_gravity="right|bottom"
+        android:layout_marginBottom="15dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/btn_delete"
+   />
+</FrameLayout>

@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.devlin_n.videoplayer.player.IjkVideoView
+        android:id="@+id/video"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="-50dp"
+        android:layout_marginLeft="-10dp"
+        android:layout_marginRight="-10dp"
+        android:layout_marginTop="-50dp" />
+
+    <FrameLayout
+        android:id="@+id/info_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/layout_top"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/starValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/info"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bg_round_gray30"
+                android:paddingBottom="5dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="5dp"
+                android:text=""
+                android:textColor="@android:color/white"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/liveId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignTop="@+id/starValue"
+                android:paddingTop="5dp"
+                android:text=""
+                android:textColor="@android:color/white"
+                android:textSize="12sp" />
+
+            <LinearLayout
+                android:id="@+id/info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_round_gray30"
+                    android:orientation="horizontal">
+
+                    <com.act.quzhibo.widget.CircleImageView
+                        android:id="@+id/showerAvatar"
+                        android:layout_width="@dimen/avatar_size36"
+                        android:layout_height="@dimen/avatar_size36"
+                        android:background="@mipmap/default_head"
+                        android:layout_margin="2dp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginTop="5dp"
+                        android:orientation="vertical"
+                        android:paddingLeft="5dp">
+
+                        <TextView
+                            android:id="@+id/userNickName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="直播"
+                            android:textColor="@android:color/white"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/onlineCount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="1209"
+                            android:textColor="@android:color/white"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/focus_top"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/bg_round_redpink_f"
+                        android:gravity="center"
+                        android:paddingBottom="5dp"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:paddingTop="5dp"
+                        android:text="关注ta"
+                        android:textColor="@color/white"
+                        android:textSize="13sp" />
+                </LinearLayout>
+
+                <com.act.quzhibo.widget.HorizontialListView
+                    android:id="@+id/list"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="2dp" />
+            </LinearLayout>
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/saytext"
+            android:layout_width="270dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="100dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="70dp"
+            android:divider="@null"
+            android:text="请遵守互联网直播服务管理规定，勿发布低俗涉黄言论，封面和直播内容含低俗、暴露、吸烟等都将被封停账号。大舞台，正能量，希望大家共同守护我们的网络家园，共创一个干净的直播环境"
+            android:textColor="#90EE90"
+            android:textSize="15sp" />
+
+        <com.act.quzhibo.widget.UPMarqueeView
+            android:id="@+id/marqueeView"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="60dp" />
+
+
+    </FrameLayout>
+
+
+    <LinearLayout
+        android:id="@+id/layout_bottom_menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+        <ImageView
+            android:id="@+id/send_message"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/bg_circle_gray30"
+            android:padding="5dp"
+            android:src="@drawable/icon_send_message" />
+
+        <FrameLayout
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/bg_circle_gray30"
+            android:padding="2dp">
+
+            <CheckBox
+                android:id="@+id/hideOrSee"
+                android:layout_width="35dp"
+                android:layout_height="29dp"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_visi_selector"
+                android:button="@null"
+                android:checked="false" />
+        </FrameLayout>
+
+        <ImageView
+            android:id="@+id/message"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/bg_circle_gray30"
+            android:padding="5dp"
+            android:src="@drawable/icon_message" />
+
+        <ImageView
+            android:id="@+id/gift"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/bg_circle_gray30"
+            android:padding="5dp"
+            android:src="@drawable/icon_gift" />
+
+
+        <ImageView
+            android:id="@+id/close"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/bg_circle_gray30"
+            android:padding="5dp"
+            android:src="@drawable/icon_close" />
+
+        <FrameLayout
+            android:id="@+id/fullScreen"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/bg_circle_gray30"
+            android:padding="2dp"
+            android:visibility="gone">
+
+            <RadioButton
+                android:id="@+id/fullscreen"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center"
+                android:background="@drawable/full_screen_selector"
+                android:button="@null"
+                android:checked="true" />
+        </FrameLayout>
+
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/addherat"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="bottom|right"
+        android:layout_marginBottom="4dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/bg_circle_gray30"
+        android:padding="5dp"
+        android:src="@drawable/addheart" />
+
+    <ProgressBar
+        android:id="@+id/bar"
+        style="@android:style/Widget.ProgressBar.Small"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_gravity="center" />
+
+    <tyrantgit.widget.HeartLayout
+        android:id="@+id/heart_layout"
+        android:layout_width="100dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="bottom|right"
+        android:layout_marginBottom="60dp" />
+
+</FrameLayout>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/order_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:background="@drawable/background_card"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/updatedTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:text="下单时间: 2017-08-12"
+        android:textSize="16sp" />
+
+
+    <TextView
+        android:id="@+id/orderDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/updatedTime"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:gravity="left"
+        android:text="订单名称: 初级VIP"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/orderStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/updatedTime"
+        android:layout_alignBottom="@+id/updatedTime"
+        android:layout_alignEnd="@+id/updatedTime"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:text="支付已完成"
+        android:textColor="#ffff8000"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/orderPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/orderDescription"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:gravity="right"
+        android:paddingRight="15dp"
+        android:text="订单价格: ￥200"
+        android:textSize="16sp" />
+
+
+
+    <TextView
+        android:id="@+id/deleteOrder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/orderPrice"
+        android:layout_alignEnd="@+id/orderStatus"
+        android:background="@drawable/bg_circle_orange"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:layout_marginBottom="10dp"
+        android:text="删除订单"
+        android:textColor="#fff" />
+
+
+</RelativeLayout>

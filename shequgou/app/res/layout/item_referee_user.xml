@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/order_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:background="@drawable/background_card"
+    android:orientation="vertical">
+
+    <com.act.quzhibo.widget.CircleImageView
+        android:id="@+id/avater"
+        android:layout_width="70dp"
+        android:background="@mipmap/default_head"
+        android:layout_height="70dp"
+        android:layout_margin="5dp" />
+
+    <TextView
+        android:id="@+id/createTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@+id/avater"
+        android:text="加入时间: 2017-08-12"
+        android:textSize="16sp" />
+
+
+    <TextView
+        android:id="@+id/userNickName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/createTime"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@+id/avater"
+        android:gravity="left"
+        android:text=""
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/vipLevel"
+        android:layout_below="@+id/userNickName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:layout_toRightOf="@+id/avater"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:textColor="#ffff8000"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/refereeOrder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/userNickName"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="15dp"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/button_common_selector"
+        android:paddingBottom="8dp"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        android:paddingTop="8dp"
+        android:text="查看他的订单"
+        android:textColor="#fff" />
+
+</RelativeLayout>

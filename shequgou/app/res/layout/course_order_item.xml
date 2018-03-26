@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/courseLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background_card"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:layout_margin="5dp"
+        android:orientation="horizontal">
+<FrameLayout
+    android:layout_gravity="center_vertical"
+    android:layout_margin="5dp"
+    android:layout_weight="1.2"
+    android:layout_width="0dp"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/courseImage"
+        android:scaleType="fitXY"/>
+
+    <TextView
+        android:id="@+id/orderStatus"
+        android:layout_margin="3dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|left"
+        android:background="@drawable/bg_round_red"
+        android:padding="3dp"
+        android:text="ddddd"
+        android:textColor="@color/white"
+        android:textSize="14sp" />
+</FrameLayout>
+
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.2">
+
+            <TextView
+                android:id="@+id/courseName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:maxLines="2"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/courseAppPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/courseName"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="6dp"
+                android:gravity="bottom"
+                android:text=""
+                android:textColor="@color/darkorange"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/courseMarketPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/courseName"
+                android:layout_marginBottom="52dp"
+                android:layout_marginLeft="6dp"
+                android:layout_marginTop="6dp"
+                android:layout_toRightOf="@+id/courseAppPrice"
+                android:gravity="bottom"
+                android:text=""
+                android:textColor="@color/light_gray"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/downloadUrl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/courseAppPrice"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:gravity="bottom"
+                android:text=""
+                android:textColor="@color/light_gray"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/downloadPsw"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/downloadUrl"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:gravity="bottom"
+                android:text=""
+                android:textColor="@color/light_gray"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/promotionPercent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/courseAppPrice"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:gravity="bottom"
+                android:text="分成比例：90%"
+                android:textColor="@color/light_gray"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/promotionMoney"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/promotionPercent"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:gravity="bottom"
+                android:text="分成金额：fdsfs"
+                android:textColor="@color/light_gray"
+                android:textSize="13sp" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_bottom"
+        android:layout_margin="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right">
+        <TextView
+            android:id="@+id/save2File"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="170dp"
+            android:background="@drawable/button_common_selector"
+            android:paddingBottom="8dp"
+            android:paddingLeft="6dp"
+            android:paddingRight="6dp"
+            android:paddingTop="8dp"
+            android:text="保存到文件"
+            android:textColor="#fff" />
+        <TextView
+            android:id="@+id/copyurl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="90dp"
+            android:background="@drawable/button_common_selector"
+            android:paddingBottom="8dp"
+            android:paddingLeft="6dp"
+            android:paddingRight="6dp"
+            android:paddingTop="8dp"
+            android:text="复制网址"
+            android:textColor="#fff" />
+
+        <TextView
+            android:id="@+id/copypsw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/button_common_selector"
+            android:paddingBottom="8dp"
+            android:paddingLeft="6dp"
+            android:paddingRight="6dp"
+            android:paddingTop="8dp"
+            android:text="复制密码"
+            android:textColor="#fff" />
+
+        <TextView
+            android:id="@+id/deleteOrder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginLeft="6dp"
+            android:background="@drawable/button_common_selector"
+            android:paddingBottom="8dp"
+            android:paddingLeft="6dp"
+            android:paddingRight="6dp"
+            android:paddingTop="8dp"
+            android:text="删除订单"
+            android:textColor="#fff"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+             />
+
+    </RelativeLayout>
+
+</LinearLayout>

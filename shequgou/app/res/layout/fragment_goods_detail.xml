@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.act.quzhibo.widget.TitleBarView
+        android:id="@+id/titlebar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_alignParentBottom="true"
+                android:id="@+id/text_buynow"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1.6"
+                android:background="@color/red"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:text="立即购买"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+
+</RelativeLayout>
+
+
+
+
+
+
+

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.act.quzhibo.widget.CircleImageView
+        android:id="@+id/postImg"
+        android:layout_width="@dimen/avatar_size36"
+        android:layout_height="@dimen/avatar_size36"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="1dp"
+        android:layout_marginRight="1dp" />
+
+    <com.act.quzhibo.widget.CircleImageView
+        android:id="@+id/avatarvideo"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="1dp"
+        android:layout_marginRight="1dp"
+        android:layout_marginTop="7dp" />
+</FrameLayout>

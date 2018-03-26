@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <com.act.quzhibo.widget.TitleBarView
+        android:id="@+id/titlebar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/titleBarViewHeight" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="270dp"
+                android:background="@drawable/commissionup">
+
+                <com.act.quzhibo.widget.CircleImageView
+                    android:id="@+id/iv_avtar"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_gravity="center"
+                    android:background="@mipmap/default_head" />
+            </FrameLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <LinearLayout
+                    android:id="@+id/moneyinfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp">
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:id="@+id/coinsCount"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="45dp"
+                            android:gravity="center"
+                            android:text="0"
+                            android:textColor="@color/darkorange"
+                            android:textSize="25sp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:gravity="center_horizontal"
+                            android:text="星 钻"
+                            android:textSize="15sp" />
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="20dp"
+                        android:layout_weight="1">
+
+
+                        <TextView
+                            android:id="@+id/commission_total"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="45dp"
+                            android:gravity="center_horizontal"
+                            android:maxLength="10"
+                            android:text="0.0"
+                            android:textColor="@color/darkorange"
+                            android:textSize="25sp" />
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:gravity="center_horizontal"
+                            android:text="收 益"
+                            android:textSize="15sp" />
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+
+                <Button
+                    android:id="@+id/checkout"
+                    android:layout_width="300dp"
+                    android:layout_height="@dimen/titleBarViewHeight"
+                    android:layout_below="@+id/moneyinfo"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="40dp"
+                    android:background="@drawable/button_common_selector"
+                    android:gravity="center"
+                    android:text="提 现"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+                <Button
+                    android:id="@+id/checkoutExplain"
+                    android:layout_width="300dp"
+                    android:layout_height="@dimen/titleBarViewHeight"
+                    android:layout_below="@+id/checkout"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="40dp"
+                    android:background="@drawable/button_common_selector"
+                    android:gravity="center"
+                    android:text="提现说明"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_below="@+id/checkoutExplain" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>

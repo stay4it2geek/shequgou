@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:emojicon="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/margin_10"
+    android:paddingTop="@dimen/margin_15">
+
+    <TextView
+        android:id="@+id/tv_time"
+        style="@style/style_text_white_small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@color/color_msg_system_time_bg"
+        android:padding="@dimen/margin_5" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_5"
+        android:layout_marginTop="@dimen/margin_11">
+
+        <ImageView
+            android:id="@+id/iv_avatar"
+            android:layout_width="@dimen/height_50"
+            android:layout_height="@dimen/height_50"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/layerlist_circle_mask_conversation" />
+
+            <com.rockerhieu.emojicon.EmojiconTextView
+                android:id="@+id/tv_message"
+                android:layout_toRightOf="@+id/iv_avatar"
+                emojicon:emojiconSize="28sp"
+                style="@style/style_text_black"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/margin_5"
+                android:background="@drawable/left"
+                android:gravity="left|center"
+                android:lineSpacingExtra="@dimen/margin_3"
+                android:maxWidth="225.0dip"
+                android:minHeight="@dimen/height_40"
+                android:minWidth="80dp"
+                android:paddingBottom="@dimen/margin_8"
+                android:paddingLeft="@dimen/margin_15"
+                android:paddingRight="@dimen/margin_30"
+                android:paddingTop="@dimen/margin_8" />
+
+        <FrameLayout
+            android:id="@+id/video_recive_cover"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/left"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/video_recive"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_margin="5dp" />
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:background="@drawable/video_paly_cover" />
+        </FrameLayout>
+    </RelativeLayout>
+
+</LinearLayout>

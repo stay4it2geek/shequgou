@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.act.quzhibo.widget.TitleBarView
+        android:id="@+id/titlebar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#eee"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/commonViewHeight"
+                    android:layout_marginTop="1dp"
+                    android:background="#fff">
+
+                    <ImageView
+                        android:id="@+id/openSecret_img"
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="15dp"
+                        android:background="@drawable/secret" />
+
+                    <TextView
+                        android:id="@+id/openSecret_txt"
+                        style="@style/textStyle"
+                        android:gravity="center_vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_toRightOf="@+id/openSecret_img"
+                        android:text="是否开启私密模式" />
+
+                    <CheckBox
+                        android:background="@drawable/checkbox_common_selector"
+                        android:id="@+id/openSecret_switch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="38dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="right"
+                        android:button="@null"
+                        android:layout_marginRight="10dp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/modifyPSWlayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/commonViewHeight"
+                    android:layout_marginTop="1dp"
+                    android:background="#fff">
+
+                    <ImageView
+                        android:id="@+id/modifyPSW_img"
+                        android:layout_width="28dp"
+                        android:layout_height="32dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="11dp"
+                        android:background="@drawable/password" />
+
+                    <TextView
+                        android:id="@+id/modifyPSW_txt"
+                        style="@style/textStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@+id/modifyPSW_img"
+                        android:paddingTop="3dp"
+                        android:text="重置密码" />
+
+                    <View
+                        android:layout_width="10dp"
+                        android:layout_height="18dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="25dp"
+                        android:background="@drawable/icon_main_more" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/commonViewHeight"
+                    android:layout_marginTop="1dp"
+                    android:background="#fff">
+
+                    <TextView
+                        android:id="@+id/clear_cache_txt"
+                        style="@style/textStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="15dp"
+                        android:gravity="center_vertical"
+                        android:text="清除手机缓存" />
+
+                    <ImageView
+                        android:layout_width="12dp"
+                        android:layout_height="17dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="25dp"
+                        android:background="@drawable/icon_main_more" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/commonViewHeight"
+                    android:layout_marginTop="1dp"
+                    android:background="#fff">
+
+                    <TextView
+                        android:id="@+id/sex_txt"
+                        style="@style/textStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:paddingTop="3dp"
+                        android:text="设置性别无法更改，请真实设置" />
+
+                    <RelativeLayout
+                        android:id="@+id/sex_rl"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10dp"
+                            android:background="@drawable/spinner" />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/commonViewHeight"
+                    android:layout_marginTop="1dp"
+                    android:background="#fff">
+
+                    <TextView
+                        android:id="@+id/age_txt"
+                        style="@style/textStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="15dp"
+                        android:gravity="center_vertical|left"
+                        android:text="设置您的年龄" />
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/spinner" />
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:visibility="gone"
+                    android:id="@+id/arealocation_rl"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/commonViewHeight"
+                    android:layout_marginTop="1dp"
+                    android:background="#fff">
+
+                    <TextView
+                        android:id="@+id/arealocation_txt"
+                        style="@style/textStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="15dp"
+                        android:gravity="center_vertical"
+                        android:text="您的地区" />
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/spinner" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/commonViewHeight"
+                    android:layout_marginTop="1dp"
+                    android:background="#fff">
+
+                    <TextView
+                        android:id="@+id/disPurpose_txt"
+                        style="@style/textStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="15dp"
+                        android:gravity="center_vertical"
+                        android:text="设置交友想法" />
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/spinner" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/commonViewHeight"
+                    android:layout_marginTop="1dp"
+                    android:background="#fff">
+
+                    <TextView
+                        android:id="@+id/candateThing_txt"
+                        style="@style/textStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="15dp"
+                        android:gravity="center_vertical"
+                        android:text="设置是否可约" />
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/spinner" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/commonViewHeight"
+                    android:layout_marginTop="1dp"
+                    android:background="#fff">
+
+                    <TextView
+                        android:id="@+id/disMariState_txt"
+                        style="@style/textStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="15dp"
+                        android:gravity="center_vertical"
+                        android:text="设置情感状态" />
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/spinner" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/next"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_gravity="bottom|center_horizontal"
+                    android:background="@drawable/button_common_selector"
+                    android:padding="10dp"
+                    android:visibility="gone"
+                    android:text="我已设置资料,点击这里关闭页面"
+                    android:textColor="@color/white"
+                    android:textSize="17sp" />
+            </LinearLayout>
+        </ScrollView>
+
+        <LinearLayout
+            android:id="@+id/secret_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="47dp"
+            android:background="@color/white"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:visibility="invisible">
+
+            <com.act.quzhibo.lock_view.LockIndicatorView
+                android:id="@+id/indicator"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="15dp" />
+
+            <com.act.quzhibo.lock_view.LockViewGroup
+                android:id="@+id/lockgroup"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp" />
+
+            <TextView
+                android:id="@+id/tv_tips"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="绘制解锁图案"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </FrameLayout>
+
+</LinearLayout>

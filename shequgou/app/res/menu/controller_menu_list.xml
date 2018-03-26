@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/fullscreen"
+        android:title="全屏观看"
+        android:icon="@drawable/ic_action_picture_in_picture"/>
+    <item android:id="@+id/download"
+        android:title="下载视频">
+    </item>
+</menu>

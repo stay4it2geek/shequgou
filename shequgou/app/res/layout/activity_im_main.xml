@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/main_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/bg_title_purpse"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/btn_conversation"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:onClick="onTabSelect"
+                android:textColor="@drawable/textcolor_selector"
+                android:paddingBottom="2dip"
+                android:scaleType="matrix"
+                android:text="@string/main_tab_recent"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tv_conversation_tips"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginRight="40dp"
+                android:layout_marginTop="7dp"
+                android:background="@drawable/bg_circle_red"
+                android:gravity="center"
+                android:text="1"
+                android:visibility="gone"
+                android:textColor="@color/white"
+                android:textSize="10sp"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/btn_contact"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:onClick="onTabSelect"
+                android:paddingBottom="2dip"
+                android:scaleType="matrix"
+                android:text="@string/main_tab_contact"
+                android:textColor="@drawable/textcolor_selector"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tv_contact_tips"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="7dp"
+                android:background="@drawable/bg_circle_red"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="10sp"
+                android:visibility="gone"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+              />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/main_bottom"
+        android:background="@color/color_99"
+        android:orientation="horizontal">
+
+    </LinearLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_below="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
+</RelativeLayout>

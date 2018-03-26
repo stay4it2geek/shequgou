@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/navigationbar"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/titleBarViewHeight">
+
+    <TextView
+        android:id="@+id/barTitle"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/titleBarViewHeight"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/bg_title_purpse"
+        android:gravity="center"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:singleLine="true"
+        android:text=""
+        android:textColor="@color/white"
+        android:textSize="18sp" />
+
+    <RelativeLayout
+        android:id="@+id/backbuttonLayout"
+        android:layout_width="35dp"
+        android:layout_marginLeft="5dp"
+        android:layout_gravity="center_vertical"
+        android:layout_height="32dp"
+        android:background="@drawable/ic_back" />
+
+    <TextView
+        android:id="@+id/tvEditor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right|center_vertical"
+        android:layout_marginRight="15dp"
+        android:padding="10dp"
+        android:text="编辑"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:visibility="gone" />
+
+</FrameLayout>
