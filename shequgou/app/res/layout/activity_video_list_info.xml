@@ -6,6 +6,7 @@
     <com.jcodecraeer.xrecyclerview.XRecyclerView
         android:id="@+id/videoRecyleview"
         android:layout_marginBottom="40dp"
+        android:background="@color/base_bg"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
