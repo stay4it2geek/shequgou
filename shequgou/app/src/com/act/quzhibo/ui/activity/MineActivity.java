@@ -141,7 +141,7 @@ public class MineActivity extends BaseActivity {
         });
     }
 
-    @OnClick({R.id.circleAvatar,R.id.videofocusshower, R.id.avaterlayout,
+    @OnClick({R.id.circleAvatar,R.id.myfocus_videoshower, R.id.avaterlayout,
             R.id.loginLayout, R.id.uploadImgText, R.id.getVipLayout,
             R.id.vip_order_listlayout, R.id.who_see_me, R.id.who_focus_me,
             R.id.myfocus_person, R.id.myfocus_shower, R.id.settingDetailayout,
@@ -188,7 +188,7 @@ public class MineActivity extends BaseActivity {
                             view.setBackgroundColor(getResources().getColor(R.color.colorbg));
                             view.setBackgroundColor(getResources().getColor(R.color.white));
                             switch (view.getId()) {
-                                case R.id.videofocusshower:
+                                case R.id.myfocus_videoshower:
                                     startActivity(new Intent(MineActivity.this, MyFocusGirlsActvity.class));
                                     break;
                                 case R.id.who_see_me:

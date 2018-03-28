@@ -60,11 +60,6 @@ public class MyStandardVideoController extends StandardVideoController implement
 
     public OnVideoControllerListner onVideoControllerListner;
 
-    public void setOnVideoControllerListner(OnVideoControllerListner onVideoControllerListner) {
-        this.onVideoControllerListner = onVideoControllerListner;
-
-    }
-
 
     public void onClick(View v) {
         if (viewVisiable) {
@@ -111,10 +106,10 @@ public class MyStandardVideoController extends StandardVideoController implement
                         getContext().startActivity(new Intent(getContext(), LoginActivity.class));
                         return;
                     }
-                    if (BmobUser.getCurrentUser(RootUser.class).vipConis > 14000) {
+                    if (BmobUser.getCurrentUser(RootUser.class).isVip) {
                         this.mediaPlayer.start();
                     } else {
-                        ToastUtil.showToast(getContext(), "积分不足14000");
+                        ToastUtil.showToast(getContext(), "您还不是会员！请升级会员");
                     }
                 } else {
                     this.mediaPlayer.start();

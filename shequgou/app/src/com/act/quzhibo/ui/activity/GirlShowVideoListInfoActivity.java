@@ -99,9 +99,12 @@ public class GirlShowVideoListInfoActivity extends AppCompatActivity {
                         recyclerView.setNoMore(true);
                     }
                 }
+                Display display = getWindowManager().getDefaultDisplay();
+                Point size = new Point();
+                display.getSize(size);
 
                 if (adapter == null) {
-                    adapter = new VideoListInfoAdapter(GirlShowVideoListInfoActivity.this, infoEntity, details);
+                    adapter = new VideoListInfoAdapter(GirlShowVideoListInfoActivity.this, infoEntity, details,size);
                     adapter.setOnItemClickListener(new VideoListInfoAdapter.OnRecyclerViewItemClickListener() {
                         @Override
                         public void onItemClick(View view, int position) {

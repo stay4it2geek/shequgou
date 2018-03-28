@@ -38,6 +38,9 @@ import java.util.Random;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
+
 public class InterestPostListAdapter extends RecyclerView.Adapter<InterestPostListAdapter.MyViewHolder> {
     ArrayList<InterestPost> datas;
     Context context;
@@ -78,7 +81,6 @@ public class InterestPostListAdapter extends RecyclerView.Adapter<InterestPostLi
         String nick = user.nick.replaceAll("\r|\n", "");
         holder.nickName.setText(nick);
 
-
         long l = System.currentTimeMillis() - Long.parseLong(datas.get(position).ctime);
         long day = l / (24 * 60 * 60 * 1000);
         long hour = (l / (60 * 60 * 1000) - day * 24);
@@ -110,8 +112,11 @@ public class InterestPostListAdapter extends RecyclerView.Adapter<InterestPostLi
         } else if (day < 30) {
             holder.createTime.setText(day + "天" + hour + "小时前");
         } else if (day > 30) {
-            holder.createTime.setText("1个月前");
+            Random randomDay = new Random();
+            String randomDate = (randomDay.nextInt(15) + 5) + "";
+            holder.createTime.setText(randomDate+"个天前");
         }
+
         holder.title.setText(datas.get(position).title + "");
         new AsyncTask<Void, Void, String>() {
             @Override
@@ -149,7 +154,6 @@ public class InterestPostListAdapter extends RecyclerView.Adapter<InterestPostLi
             }
         }.execute();
 
-
         holder.viewNum.setText(datas.get(position).pageView + "");
         holder.pinglunNum.setText(datas.get(position).totalComments + "");
 
@@ -157,6 +161,7 @@ public class InterestPostListAdapter extends RecyclerView.Adapter<InterestPostLi
             holder.pName.setVisibility(View.VISIBLE);
             holder.pName.setText(post.sName);
         }
+
         if (datas.get(position).totalImages != null && Integer.parseInt(datas.get(position).totalImages) > 0) {
             holder.imgGridview.setVisibility(View.VISIBLE);
             holder.imgVideolayout.setVisibility(View.GONE);
@@ -188,6 +193,7 @@ public class InterestPostListAdapter extends RecyclerView.Adapter<InterestPostLi
 
             }
         }
+
         holder.postlayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -253,41 +259,40 @@ public class InterestPostListAdapter extends RecyclerView.Adapter<InterestPostLi
 
 
     class MyViewHolder extends RecyclerView.ViewHolder {
+        @Bind(R.id.pName)
         TextView pName;
-        GridView imgGridview;
-        TextView viewNum;
-        TextView pinglunNum;
-        TextView nickName;
-        TextView title;
+        @Bind(R.id.photoImg)
         ImageView photoImg;
-        RelativeLayout postlayout;
+        @Bind(R.id.nick)
+        TextView nickName;
+        @Bind(R.id.title)
+        TextView title;
+        @Bind(R.id.absText)
         TextView absText;
-        TextView imgtotal;
-        ImageView imgVideo;
-        TextView arealocation;
+        @Bind(R.id.createTime)
         TextView createTime;
+        @Bind(R.id.location)
+        TextView arealocation;
+        @Bind(R.id.sexAndAge)
         TextView sexAndAge;
+        @Bind(R.id.viewNum)
+        TextView viewNum;
+        @Bind(R.id.pinglunNum)
+        TextView pinglunNum;
+        @Bind(R.id.imgtotal)
+        TextView imgtotal;
+        @Bind(R.id.postlayout)
+        RelativeLayout postlayout;
+        @Bind(R.id.imgGridview)
+        GridView imgGridview;
+        @Bind(R.id.imgVideo)
+        ImageView imgVideo;
+        @Bind(R.id.imgVideolayout)
         FrameLayout imgVideolayout;
 
         public MyViewHolder(View view) {
             super(view);
-            pName = (TextView) view.findViewById(R.id.pName);
-            photoImg = (ImageView) view.findViewById(R.id.photoImg);
-            nickName = (TextView) view.findViewById(R.id.nick);
-            title = (TextView) view.findViewById(R.id.title);
-            absText = (EmojiconTextView) view.findViewById(R.id.absText);
-            createTime = (TextView) view.findViewById(R.id.createTime);
-            arealocation = (TextView) view.findViewById(R.id.location);
-            sexAndAge = (TextView) view.findViewById(R.id.sexAndAge);
-            viewNum = (TextView) view.findViewById(R.id.viewNum);
-            pinglunNum = (TextView) view.findViewById(R.id.pinglunNum);
-            imgtotal = (TextView) view.findViewById(R.id.imgtotal);
-            postlayout = (RelativeLayout) view.findViewById(R.id.postlayout);
-            imgGridview = (GridView) view.findViewById(R.id.imgGridview);
-            imgVideo = (ImageView) view.findViewById(R.id.imgVideo);
-            imgVideolayout = (FrameLayout) view.findViewById(R.id.imgVideolayout);
-
-
+            ButterKnife.bind(this, itemView);
         }
     }
 }

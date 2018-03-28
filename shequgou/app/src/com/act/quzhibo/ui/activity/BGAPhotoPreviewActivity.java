@@ -46,18 +46,18 @@ import static cn.woblog.android.downloader.domain.DownloadInfo.STATUS_WAIT;
 
 
 public class BGAPhotoPreviewActivity extends BGAPPToolbarActivity implements PhotoViewAttacher.OnViewTapListener, BGAAsyncTask.Callback<Void> {
-    private static final String EXTRA_CURRENT_POSITION = "EXTRA_CURRENT_POSITION";
-    private static final String MEDIA_INFO_LIST = "MEDIA_INFO_LIST";
-    private TextView mTitleTv;
-    private ImageView mDownloadIv;
-    private BGAHackyViewPager mContentHvp;
-    private BGAPhotoPageAdapter mAdapter;
-    private boolean mIsHidden = false;
-    private BGASavePhotoTask mSavePhotoTask;
-    private DownloadManager downloadManager;
-    private DBController dbController;
-    private ArrayList<MediaInfo> mediaInfos=new ArrayList<>();
-    private long mLastShowHiddenTime;
+     static final String EXTRA_CURRENT_POSITION = "EXTRA_CURRENT_POSITION";
+     static final String MEDIA_INFO_LIST = "MEDIA_INFO_LIST";
+     TextView mTitleTv;
+     ImageView mDownloadIv;
+     BGAHackyViewPager mContentHvp;
+     BGAPhotoPageAdapter mAdapter;
+     boolean mIsHidden = false;
+     BGASavePhotoTask mSavePhotoTask;
+     DownloadManager downloadManager;
+     DBController dbController;
+     ArrayList<MediaInfo> mediaInfos=new ArrayList<>();
+     long mLastShowHiddenTime;
 
     /**
      * 获取查看图片的intent
@@ -152,7 +152,7 @@ public class BGAPhotoPreviewActivity extends BGAPPToolbarActivity implements Pho
         return true;
     }
 
-    private void renderTitleTv() {
+     void renderTitleTv() {
         if (mTitleTv == null || mAdapter == null) {
             return;
         }
@@ -176,7 +176,7 @@ public class BGAPhotoPreviewActivity extends BGAPPToolbarActivity implements Pho
         }
     }
 
-    private void showTitleBar() {
+     void showTitleBar() {
         if (mToolbar != null) {
             ViewCompat.animate(mToolbar).translationY(0).setInterpolator(new DecelerateInterpolator(2)).setListener(new ViewPropertyAnimatorListenerAdapter() {
                 @Override
@@ -187,7 +187,7 @@ public class BGAPhotoPreviewActivity extends BGAPPToolbarActivity implements Pho
         }
     }
 
-    private void hiddenTitleBar() {
+     void hiddenTitleBar() {
         if (mToolbar != null) {
             ViewCompat.animate(mToolbar).translationY(-mToolbar.getHeight()).setInterpolator(new DecelerateInterpolator(2)).setListener(new ViewPropertyAnimatorListenerAdapter() {
                 @Override
@@ -200,7 +200,7 @@ public class BGAPhotoPreviewActivity extends BGAPPToolbarActivity implements Pho
 
     File mSaveImgDir = new File(Environment.getExternalStorageDirectory().getAbsolutePath(), Constants.PHOTO_DOWNLOAD);
 
-    private synchronized void savePic() {
+     synchronized void savePic() {
 
         MediaInfo mediaInfo = mediaInfos.get(mContentHvp.getCurrentItem());
         String url = mediaInfo.getUrl();
@@ -327,7 +327,7 @@ public class BGAPhotoPreviewActivity extends BGAPPToolbarActivity implements Pho
         }
     }
 
-    private DownloadInfo createDownload(MediaInfo mediaInfo, String url) {
+     DownloadInfo createDownload(MediaInfo mediaInfo, String url) {
         DownloadInfo downloadInfo = null;
         if (FileUtil.checkSdCard()) {
             File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath(), Constants.PHOTO_DOWNLOAD);

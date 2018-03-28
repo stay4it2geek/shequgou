@@ -5,7 +5,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-
     <com.devlin_n.videoplayer.player.IjkVideoView
         android:id="@+id/videoview"
         android:layout_width="match_parent"
@@ -18,11 +17,9 @@
     <ImageView
         android:id="@+id/iv_cover"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginBottom="-32dp"
-        android:layout_marginLeft="-38dp"
-        android:layout_marginRight="-38dp"
-        android:layout_marginTop="-32dp" />
+        android:adjustViewBounds="true"
+        android:scaleType="fitXY"
+        android:layout_height="match_parent"/>
 
     <com.act.quzhibo.widget.CircleImageView
         android:id="@+id/iv_avatar"

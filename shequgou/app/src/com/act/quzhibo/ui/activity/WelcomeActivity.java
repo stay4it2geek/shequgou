@@ -63,7 +63,7 @@ public class WelcomeActivity extends ActivityManagePermission {
     protected void onResume() {
         super.onResume();
         RootUser user = BmobUser.getCurrentUser(RootUser.class);
-        if (user != null) {
+        if (user != null &&user.lastLoginTime!=null) {
             CommonUtil.fecth(this);
             long l = System.currentTimeMillis() - Long.parseLong(user.lastLoginTime);
             long day = l / (24 * 60 * 60 * 1000);

@@ -3,12 +3,14 @@ package com.act.quzhibo.adapter;
 import android.app.Activity;
 import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.graphics.Point;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -29,6 +31,7 @@ public class VideoListInfoAdapter extends RecyclerView.Adapter<RecyclerView.View
     Activity activity;
     GirlVideoListInfo headerInfo;
     ArrayList<Data> girlVideos;
+    private Point sizePoint;
 
     public interface OnRecyclerViewItemClickListener {
         void onItemClick(View view, int position);
@@ -40,11 +43,12 @@ public class VideoListInfoAdapter extends RecyclerView.Adapter<RecyclerView.View
         mOnItemClickListener = listener;
     }
 
-    public VideoListInfoAdapter(Activity activity, GirlVideoListInfo headerInfo, ArrayList<Data> girlVideos) {
+    public VideoListInfoAdapter(Activity activity, GirlVideoListInfo headerInfo, ArrayList<Data> girlVideos,Point sizePoint) {
         this.headerInfo = headerInfo;
         this.activity = activity;
         this.girlVideos = girlVideos;
         mLayoutInflater = LayoutInflater.from(activity);
+        this.sizePoint = sizePoint;
 
     }
 
@@ -98,6 +102,9 @@ public class VideoListInfoAdapter extends RecyclerView.Adapter<RecyclerView.View
             }
 
         } else if (holder instanceof Item2ViewHolder) {
+            ((Item2ViewHolder) holder).videoCover.setLayoutParams(new FrameLayout.LayoutParams((sizePoint.x/ 3), (((sizePoint.y-5)/3))));
+            ((Item2ViewHolder) holder).videoCover.setAdjustViewBounds(true);
+            ((Item2ViewHolder) holder).videoCover.setScaleType(ImageView.ScaleType.FIT_XY);
             Glide.with(activity).load(girlVideos.get(position - 1).cover).error(R.drawable.error_img).into(((Item2ViewHolder) holder).videoCover);
             ((Item2ViewHolder) holder).videoCover.setOnClickListener(new View.OnClickListener() {
                 @Override

@@ -5,13 +5,10 @@ import android.content.Intent;
 import android.os.Handler;
 import android.os.Message;
 import android.view.View;
-import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.RadioButton;
-import android.widget.TextView;
 
 import com.act.quzhibo.R;
 import com.act.quzhibo.bean.Data;
@@ -22,13 +19,9 @@ import com.act.quzhibo.bean.VideoShowOneEntity;
 import com.act.quzhibo.common.OkHttpClientManager;
 import com.act.quzhibo.data_db.SeeVideoCountData;
 import com.act.quzhibo.data_db.SeeVideoCountInfoDao;
-import com.act.quzhibo.data_db.VirtualUserInfo;
-import com.act.quzhibo.data_db.VirtualUserInfoDao;
 import com.act.quzhibo.ui.activity.DashangActivity;
 import com.act.quzhibo.ui.activity.GetVipPayActivity;
 import com.act.quzhibo.ui.activity.GirlShowVideoListInfoActivity;
-import com.act.quzhibo.ui.activity.VideoPlayerActivity;
-import com.act.quzhibo.ui.fragment.LazyLoadFragment;
 import com.act.quzhibo.util.CommonUtil;
 import com.act.quzhibo.util.ToastUtil;
 import com.act.quzhibo.widget.CircleImageView;
@@ -37,7 +30,6 @@ import com.act.quzhibo.widget.OnDoubleClickListener;
 import com.bumptech.glide.Glide;
 import com.devlin_n.videoplayer.listener.VideoListener;
 import com.devlin_n.videoplayer.player.IjkVideoView;
-import com.mabeijianxi.smallvideorecord2.StringUtils;
 
 import java.util.List;
 
@@ -59,9 +51,9 @@ public class VideoShowOneFragment extends LazyLoadFragment {
     CircleImageView iv_avatar;
     FrameLayout videoFrameLayout;
     RadioButton dianliangRadio;
-    private Data videoData;
+    Data videoData;
     MyFocusGirl myFocusGirl;
-    private RootUser user;
+    RootUser user;
 
     @Override
     protected int setContentView() {
@@ -153,6 +145,7 @@ public class VideoShowOneFragment extends LazyLoadFragment {
         }
     }
 
+    boolean showDilog=true;
     boolean canLookVideo;
     Handler handler = new Handler() {
         @Override
@@ -191,6 +184,8 @@ public class VideoShowOneFragment extends LazyLoadFragment {
                 Glide.with(getActivity()).load(videoData.cover).into(iv_cover);//加载视频封面
                 bar.setVisibility(View.GONE);
             }
+            Glide.with(getActivity()).load(entity.data.avatar.url).into(iv_avatar);//頭像
+
             iv_avatar.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -208,7 +203,8 @@ public class VideoShowOneFragment extends LazyLoadFragment {
                     }
                 }
             }, entity.data.vid);
-            Glide.with(getActivity()).load(entity.data.avatar.url).into(iv_avatar);//頭像
+
+
             dashang.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -252,20 +248,50 @@ public class VideoShowOneFragment extends LazyLoadFragment {
                 });
 
 
-            } else
+            } else {
+                videoView
+                        .addToPlayerManager().useSurfaceView()
+                        .setUrl(entity.data.url);
+                videoView.start();
 
-            {
-                FragmentDialog.newInstance(false, "温馨提示", "非VIP只能观看10个视频，成为VIP会员可以无限观看哦！", "成为VIP", "看10个够了", "", "", false, new FragmentDialog.OnClickBottomListener() {
+                videoView.setVideoListener(new VideoListener() {
                     @Override
-                    public void onPositiveClick(Dialog dialog, boolean deleteFileSource) {
-                        startActivity(new Intent(getActivity(), GetVipPayActivity.class));
+                    public void onComplete() {
+                        videoView.stopPlayback();
                     }
 
                     @Override
-                    public void onNegtiveClick(Dialog dialog) {
-                        dialog.dismiss();
+                    public void onPrepared() {
+                        videoView.stopPlayback();
+                        if (showDilog) {
+                            FragmentDialog.newInstance(false, "温馨提示", "非VIP只能观看10个视频，成为VIP会员可以无限观看哦！", "成为VIP", "看10个够了", "", "", false, new FragmentDialog.OnClickBottomListener() {
+                                @Override
+                                public void onPositiveClick(Dialog dialog, boolean deleteFileSource) {
+                                    startActivity(new Intent(getActivity(), GetVipPayActivity.class));
+                                }
+
+                                @Override
+                                public void onNegtiveClick(Dialog dialog) {
+                                    dialog.dismiss();
+                                }
+                            }).show(getChildFragmentManager(), "");
+                            showDilog = false;
+                        }
                     }
-                }).show(getChildFragmentManager(), "");
+
+                    @Override
+                    public void onError() {
+                        bar.setVisibility(View.GONE);
+                        ToastUtil.showToast(getActivity(), "无法播放该视频，上下滑动切换看其他视频吧！");
+                    }
+
+                    @Override
+                    public void onInfo(int i, int i1) {
+                        bar.setVisibility(View.GONE);
+                    }
+                });
+
+
             }
         }
 

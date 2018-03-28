@@ -43,13 +43,9 @@ public class ChatAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     //视频
     private final int TYPE_SEND_VIDEO = 8;
     private final int TYPE_RECEIVER_VIDEO = 9;
-
     //同意添加好友成功后的样式
     private final int TYPE_AGREE = 10;
-
-    /**
-     * 显示时间间隔:10分钟
-     */
+    //显示时间间隔:10分钟
     private final long TIME_INTERVAL = 10 * 60 * 1000;
 
     private List<BmobIMMessage> msgs = new ArrayList<>();

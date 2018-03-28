@@ -238,22 +238,6 @@ public class InteretstPostDetailAdapter extends RecyclerView.Adapter<RecyclerVie
                 return;
             }
             final InterestPostPageCommentDetail commentDetail = data.comments.get(position - 1);
-//            if (commentDetail.user.sex.equals("2")) {
-//                ((Item2ViewHolder) holder).userImage.setTag(commentDetail.user.photoUrl);
-//                Glide.with(activity).load(commentDetail.user.photoUrl).asBitmap().placeholder(R.drawable.women).into(new SimpleTarget<Bitmap>() {
-//                    @Override
-//                    public void onResourceReady(Bitmap resource, GlideAnimation<? super Bitmap> glideAnimation) {
-//                        ((Item2ViewHolder) holder).userImage.setBackground(new BitmapDrawable(resource));
-//                    }
-//
-//                    @Override
-//                    public void onLoadFailed(Exception e, Drawable errorDrawable) {
-//                        super.onLoadFailed(e, errorDrawable);
-//                        ((Item2ViewHolder) holder).userImage.setBackgroundDrawable(errorDrawable);
-//
-//                    }
-//                });
-//            } else {
 
                 Random random = new Random();
                 String randomAge = (random.nextInt(15) + 20) + "";

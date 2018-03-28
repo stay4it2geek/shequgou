@@ -117,14 +117,11 @@ public class GirlShowListFagment extends Fragment {
                 Display display = getActivity().getWindowManager().getDefaultDisplay();
                 Point size = new Point();
                 display.getSize(size);
-                int screenWidth = size.x;
                 if (adapter == null) {
-
-                    adapter = new GirListAdapter(getActivity(), details, screenWidth);
+                    adapter = new GirListAdapter(getActivity(), details, size);
                     adapter.setOnItemClickListener(new GirListAdapter.OnRecyclerViewItemClickListener() {
                         @Override
                         public void onItemClick(View view, int position) {
-
                             Intent intent=  new Intent(getActivity(), VideoShowOneActivity.class);
                             intent.putParcelableArrayListExtra("videoDatas",details);
                             intent.putExtra("position",position+"");
@@ -142,8 +139,6 @@ public class GirlShowListFagment extends Fragment {
                     loadNetView.setlayoutVisily(Constants.NO_DATA);
                     return;
                 }
-
-
             } else {
                 loadNetView.setVisibility(View.VISIBLE);
                 loadNetView.setlayoutVisily(Constants.RELOAD);

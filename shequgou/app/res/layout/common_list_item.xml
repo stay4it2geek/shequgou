@@ -30,10 +30,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/photoImglayout"
-            android:layout_alignRight="@+id/photoImglayout"
             android:layout_below="@+id/photoImglayout"
             android:layout_marginLeft="5dp"
-            android:layout_marginTop="5dp">
+            android:layout_marginTop="5dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true">
 
             <TextView
                 android:id="@+id/nickName"
@@ -87,7 +88,7 @@
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_gravity="right|bottom"
-        android:layout_marginBottom="15dp"
+        android:layout_marginBottom="5dp"
         android:layout_marginRight="10dp"
         android:background="@drawable/btn_delete"
    />

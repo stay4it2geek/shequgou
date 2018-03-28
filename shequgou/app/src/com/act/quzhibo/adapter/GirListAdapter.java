@@ -1,26 +1,25 @@
 package com.act.quzhibo.adapter;
 
 import android.content.Context;
+import android.graphics.Point;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 
 import com.act.quzhibo.R;
 import com.act.quzhibo.bean.Data;
-import com.act.quzhibo.bean.ShowDetailList;
 import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
 public class GirListAdapter extends RecyclerView.Adapter<GirListAdapter.MyViewHolder> {
 
-    private int screenWidth;
-    private Context mContext;
-    private ArrayList<Data> datas;
+     Point sizePoint;
+     Context mContext;
+     ArrayList<Data> datas;
 
     public interface OnRecyclerViewItemClickListener {
         void onItemClick(View view, int position);
@@ -32,15 +31,15 @@ public class GirListAdapter extends RecyclerView.Adapter<GirListAdapter.MyViewHo
         mOnItemClickListener = listener;
     }
 
-    public GirListAdapter(Context context, ArrayList<Data> datas, int screenWidth) {
+    public GirListAdapter(Context context, ArrayList<Data> datas, Point sizePoint) {
         mContext = context;
         this.datas = datas;
-        this.screenWidth = screenWidth;
+        this.sizePoint = sizePoint;
     }
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(mContext).inflate(R.layout.grid_shower_room_item, parent, false);
+        View view = LayoutInflater.from(mContext).inflate(R.layout.item_video_layout, parent, false);
         MyViewHolder holder = new MyViewHolder(view);
         return holder;
     }
@@ -48,8 +47,7 @@ public class GirListAdapter extends RecyclerView.Adapter<GirListAdapter.MyViewHo
     @Override
     public void onBindViewHolder(MyViewHolder holder, final int position) {
         if (holder instanceof MyViewHolder) {
-            holder.photoImg.setLayoutParams(new FrameLayout.LayoutParams((screenWidth / 2), (screenWidth / 2)+175));
-            holder.explianlayout.setVisibility(View.GONE);
+            holder.photoImg.setLayoutParams(new FrameLayout.LayoutParams((sizePoint.x / 2), ((sizePoint.y-120)/2)));
             holder.photoImg.setAdjustViewBounds(true);
             holder.photoImg.setScaleType(ImageView.ScaleType.FIT_XY);
             Glide.with(mContext).load(datas.get(position).cover).placeholder(R.drawable.placehoder_img).error(R.drawable.error_img).into(holder.photoImg);//加载网络图片
@@ -71,11 +69,9 @@ public class GirListAdapter extends RecyclerView.Adapter<GirListAdapter.MyViewHo
 
     class MyViewHolder extends RecyclerView.ViewHolder {
         private ImageView photoImg;
-        private RelativeLayout explianlayout;
         public MyViewHolder(View view) {
             super(view);
-            photoImg = (ImageView) view.findViewById(R.id.photoImg);
-            explianlayout = (RelativeLayout) view.findViewById(R.id.explianlayout);
+            photoImg = (ImageView) view.findViewById(R.id.videoCover);
         }
     }
 
